@@ -6,6 +6,7 @@ const App=()=>{
   let[fullname,setFullname]=useState("");
 
   const changingtext=(e)=>{
+
     setMyname(e.target.value);
   }
 
