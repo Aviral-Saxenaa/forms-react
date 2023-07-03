@@ -18,6 +18,14 @@ h1{
   font-weight: 400;
   color: white;
 }
+form{
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 input{
   width: 60%;
   margin: 20px auto;

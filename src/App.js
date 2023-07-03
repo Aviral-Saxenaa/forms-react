@@ -1,25 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const App=()=>{
+const App = () => {
+        let [name, setMyname] = useState("");
+        let [fullname, setFullname] = useState("");
 
-  let[name,setMyname]=useState("");
-  let[fullname,setFullname]=useState("");
+        const changingtext = (e) => {
+                setMyname(e.target.value);
+        };
 
-  const changingtext=(e)=>{
+        const clicked = (e) => {
+          e.preventDefault();
+                setFullname(name);
+        };
 
-    setMyname(e.target.value);
-  }
-
-  const clicked=()=>{
-    setFullname(name);
-  }
-
-  return(
-    <div>
-      <h1>Hello {fullname}</h1>
-      <input type='text' placeholder='Enter your name' onChange={changingtext} value={name} />
-      <button onClick={clicked}>CLICK ME</button>
-    </div>
-  )
-}
+        return (
+                <div>
+                        <form onClick={clicked}>
+                                <h1>Hello {fullname}</h1>
+                                <input
+                                        type="text"
+                                        placeholder="Enter your name"
+                                        onChange={changingtext}
+                                        value={name}
+                                />
+                                <br></br>
+                                <button type="submit">CLICK ME</button>
+                        </form>
+                </div>
+        );
+};
 export default App;
